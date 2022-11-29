@@ -1,0 +1,6 @@
+<aside class="page-sidebar">
+  <app-sidebar-header></app-sidebar-header>
+  <app-chat-list *ngIf="showInbox"></app-chat-list>
+ 
+  <app-close-chat-list *ngIf="!showInbox"></app-close-chat-list>
+</aside>

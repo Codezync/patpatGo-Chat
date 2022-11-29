@@ -1,0 +1,44 @@
+<div class="input-group">
+  <input type="text" placeholder="Search..." name="" class="form-control search" [(ngModel)]="searchText">
+  <span><i class="fas fa-search"></i></span>
+</div>
+
+<div class="chat-list">
+  <div *ngFor="let chat of chats | filter:searchText; let i = index ">
+    <div *ngIf="chat.lastMessage.status != 'hidden' && chat.lastMessage.status != ''">
+      <div class="card-body" [ngClass]="(chat.lastMessage.status == 'delivered' && chat.lastMessage.sender.senderId != customerId && chat.lastMessage.sender.senderId != agentId)? 'contacts_body_active': 'contacts_body'" (click)="changeCustomerDetails(chat)">
+        <div class="img_cont" *ngIf="chat.customer.imageUrl != '' && chat.customer.imageUrl != null">
+          <img src={{chat.customer.imageUrl}} class="rounded-circle user_img">
+          <span [ngClass]="(chat.customerOnline == true)? 'online_icon': 'offline_icon'"></span>
+        </div>
+
+        <div class="img_cont" *ngIf="chat.customer.imageUrl == '' || chat.customer.imageUrl == null">
+          <div class="profile-img-letter">
+            {{chat.customer.name.charAt(0)}}
+          </div>
+          <span [ngClass]="(chat.customerOnline == true)? 'online_icon': 'offline_icon'"></span>
+        </div>
+        <div [ngClass]="(chat.lastMessage.status == 'delivered' && chat.lastMessage.sender.senderId != customerId && chat.lastMessage.sender.senderId != agentId)? 'chat_info_active': 'chat_info'">
+          <h5>{{chat.customer.name}}
+            <span class = "new_msg" *ngIf="(chat.lastMessage.status == 'delivered' && chat.lastMessage.sender.senderId != customerId && chat.lastMessage.sender.senderId != agentId)"> &nbsp;  &nbsp;<i class="fas fa-circle"></i></span>
+            <span class="chat_date">{{chat.lastMessage.timestamp+'Z'| date:'shortTime'}}</span>
+          </h5>
+          <p class="display_msg" *ngIf="chat.lastMessage.contentType=='text'"><i class="fas fa-check" *ngIf="chat.lastMessage.sender.senderId == agentId"></i> &nbsp;{{chat.lastMessage.message}}
+            <span class="chat_agent" *ngIf="chat.agentId != ''">@{{chat.agentId}}</span>
+          </p>
+          <p *ngIf="chat.lastMessage.contentType=='image'"><i class="fas fa-check" *ngIf="chat.lastMessage.sender.senderId == agentId"></i> &nbsp; <i class="fas fa-images"></i> &nbsp; Image
+            <span class="chat_agent" *ngIf="chat.agentId != ''" >@{{chat.agentId}}</span>
+          </p>
+          <p *ngIf="chat.lastMessage.contentType=='video'"><i class="fas fa-check" *ngIf="chat.lastMessage.sender.senderId == agentId"></i> &nbsp; <i class="fas fa-video"></i> &nbsp; video
+            <span class="chat_agent" *ngIf="chat.agentId != ''" >@{{chat.agentId}}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+</div>
+

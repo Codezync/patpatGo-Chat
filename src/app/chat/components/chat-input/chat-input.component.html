@@ -1,0 +1,18 @@
+<div class="input-group mb-3" *ngIf="inboxType =='open'">
+  <input type="text" class="form-control" name="message"  placeholder="Type here..." [(ngModel)]="message" placeholder="Type here..." (keydown.enter)="send()" (keyup)="changeTyping()"  aria-describedby="button-addon2">
+
+  <button class="btn btn-outline-secondary" type="button" id="button-addon2" [ngbTooltip]="attachmentTip">
+    <div class="image-upload">
+      <label for="file-input">
+        <i class="fas fa-circle-notch fa-spin" *ngIf="showUpload"></i> &nbsp;
+        <i class="fas fa-paperclip fa-lg"></i>
+      </label>
+      <input id="file-input" type="file" accept="image/png, image/gif, image/jpeg, video/mp4,video/x-m4v,video/*" (change)="onFileSelected($event)"/>
+    </div>
+  </button>
+
+  <span class="input-group-btn">
+    <button class="btn btn-primary" (click)="send()"><i class="fas fa-paper-plane"></i></button>
+  </span>
+
+</div>

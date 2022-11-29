@@ -1,0 +1,74 @@
+.page-logo{
+  box-shadow: 0px 0px 1px 0px #888888;
+  background-color: rgba(16, 1, 17, 0.9);
+}
+
+.sidebar-header{
+  box-shadow: 0px 0px 2px 0px #888888;
+  margin-bottom: 2px;
+
+}
+.fa-square{
+  color:white
+}
+
+.fa-bars{
+  color:rgb(146, 142, 142)
+}
+
+.fa-stack{
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.action_menu{
+  z-index: 1;
+  position: absolute;
+  padding: 15px 0;
+
+  background-color: rgba(12, 11, 11, 0.9);
+  color: white;
+  border-radius: 15px;
+  top: 45px;
+  left: 30px;
+}
+
+.action_menu ul{
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.action_menu ul li{
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+}
+
+.action_menu ul li i{
+  padding-right: 10px;
+}
+
+.action_menu ul li:hover{
+  cursor: pointer;
+  background-color: rgba(94, 90, 90, 0.2);
+}
+
+.chat-type{
+  float: right;
+  color: rgb(211, 202, 202);
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.btn-danger{
+  display: inline;
+  background: linear-gradient(45deg, #fc052e, #f35073);
+  color: white;
+  box-shadow: none;
+  margin-left: 20px;
+  cursor: pointer;
+}

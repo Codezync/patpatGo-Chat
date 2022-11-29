@@ -1,0 +1,23 @@
+<div class="modal-dialog modal-fullscreen" id="image_viewer">
+  <div class="modal-content" role="dialog">
+    <div class="modal-header">
+      <button type="button" class="btn-close" data-bs-dismiss="modal-content" aria-label="Close" (click)="closeModal()">X</button>
+    </div>
+    <div class="modal-body">
+      <div *ngIf="mediaType == 'image'">
+        <img class="view-image" src={{url}}>
+      </div>
+
+      <div *ngIf="mediaType == 'video'">
+        <video class="view-video" controls>
+          <source src={{url}}>
+        </video>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+

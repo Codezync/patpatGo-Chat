@@ -1,0 +1,63 @@
+
+<div class = "displayMessage.sender.senderId != '' ">
+  <h6 class="close_conversation" *ngIf="displayMessage.type=='start'">
+    <div class="separator">Conversation started &nbsp; <b>{{finalDate}}</b> &nbsp; at &nbsp;<b>{{this.displayMessage.date+'Z' | date:'shortTime'}}</b></div>
+  </h6>
+
+  <!-- send message -->
+  <div class="chat-segment chat-segment-sent" *ngIf="customerId != senderId && displayMessage.sender.senderId != ''">
+    <div class="agent_name">
+        @{{displayName}} &nbsp;
+    </div>
+    <span ngbDropdown class="d-inline-block" class="dropdown" placement="bottom-right" *ngIf="status != 'hidden'">
+      <button class="option-btn" id="dropdownDelete" ngbDropdownToggle><i class="fas fa-ellipsis-v"></i></button>
+      <div ngbDropdownMenu aria-labelledby="dropdownDelete" class="dropdownDelete">
+        <button ngbDropdownItem (click)="deleteMessage(docId, msgArrPosition)">Delete<i class="fas fa-trash-alt"></i> </button>
+      </div>
+    </span>
+
+    <div class="chat-message" *ngIf="status != 'hidden'">
+      <p *ngIf="messageType=='text'" [innerHtml]="text | urlify "></p>
+      <img src={{text}} *ngIf="messageType=='image'" class="chat_image"  (click)="openMedia(text, 'image')">
+      <div *ngIf="messageType=='video'" >
+        <video class="chat_video" controls (click)="openMedia(text, 'video')">
+          <source src={{text}}>
+        </video>
+      </div>
+    </div>
+
+    <div class="chat-message" *ngIf="status == 'hidden' && text != ''" >
+      <p class="delete-msg"><i><i class="fas fa-ban"></i>&nbsp; This message is deleted</i></p>
+    </div>
+
+    <div class="text-right fw-300 text-muted mt-1 fs-xs">
+      {{finalDate}},&nbsp;<b>{{date+'Z' | date:'shortTime'}}</b> &nbsp;
+    </div>
+  </div>
+
+
+  <div *ngIf="status != 'hidden' && displayMessage.sender.senderId !='' ">
+
+    <!-- Receive message -->
+    <div class="chat-segment chat-segment-get" *ngIf="customerId == senderId">
+      <div class="chat-message">
+        <p *ngIf="messageType=='text'" [innerHtml]="text | urlify "></p>
+        <img src={{text}} *ngIf="messageType=='image'" class="chat_image" (click)="openMedia(text, 'image')">
+        <div *ngIf="messageType=='video'" >
+          <video class="chat_video" controls (click)="openMedia(text, 'video')">
+            <source src={{text}}>
+          </video>
+        </div>
+      </div>
+      <div class="fw-300 text-muted mt-1 fs-xs">
+        &nbsp;{{finalDate}},&nbsp;<b>{{date+'Z' | date:'shortTime'}}</b>
+      </div>
+    </div>
+  </div>
+
+  <h6 class="close_conversation" *ngIf="displayMessage.type=='close'">
+    <div class="separator">Conversation closed &nbsp; <b>{{finalDate}} </b>&nbsp; at &nbsp; <b>{{this.displayMessage.date+'Z' | date:'shortTime'}}</b>&nbsp; by &nbsp; <b><i>{{closedAgent}}</i></b></div><br><br>
+  </h6>
+</div>
+
+

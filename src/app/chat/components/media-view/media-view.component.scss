@@ -1,0 +1,38 @@
+
+.view-image{
+  max-width:fit-content;
+  max-height: 100vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.modal-content{
+  background-color: black;
+  height:100vh;
+}
+
+.btn-close{
+  color:white
+}
+
+.view-video{
+  max-width:fit-content;
+  max-height: 100vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.modal-dialog{
+  height: 100vh;
+}
+
+.btn-close{
+  margin-right: 30px;
+  font-size: 20px;
+}

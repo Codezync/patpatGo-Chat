@@ -1,0 +1,33 @@
+<div dropdown>
+  <a dropdownToggle data-toggle="dropdown" title="" class="header-icon d-flex align-items-center justify-content-center ml-2">
+    <img src="../../../assets/images/logo.png" class="profile-image rounded-circle" alt="" (click)="displayDetails()">
+  </a>
+  <div *dropdownMenu class="dropdown-menu dropdown-menu-animated-right dropdown-lg">
+    <div class="dropdown-header bg-trans-gradient d-flex flex-row py-4 rounded-top">
+      <div class="d-flex flex-row align-items-center mt-1 mb-1 color-white">
+        <span class="mr-2">
+          <div class="profile-img-letter">
+            {{username.charAt(0)}}
+          </div>
+        </span>
+        <div class="info-card-text">
+          <div class="fs-lg text-truncate text-truncate-lg">{{username}}</div>
+          <span class="text-truncate text-truncate-md opacity-80">{{email}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown-divider m-0"></div>
+    <a href="#" class="dropdown-item" data-action="app-reset">
+      <span >Reset Layout</span>
+    </a>
+    <a href="#" class="dropdown-item" data-toggle="modal" data-target=".js-modal-settings">
+      <span >Settings</span>
+    </a>
+    <div class="dropdown-divider m-0"></div>
+
+    <div class="dropdown-divider m-0"></div>
+    <a class="dropdown-item fw-500 pt-3 pb-3" (click)="logout()">
+      <span (click)="logout()">Logout</span>
+    </a>
+  </div>
+</div>

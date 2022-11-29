@@ -1,0 +1,30 @@
+<header class="page-header" role="banner">
+  <!-- <app-settings-shortcut></app-settings-shortcut> -->
+  <div class="hidden-lg-up">
+    <a href="#" (click)="openMobileNav($event)" class="header-btn btn press-scale-down" data-action="toggle" data-class="mobile-nav-on">
+      <i class="fas fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="search">
+    <form class="app-forms hidden-xs-down" role="search" action="search-results.html" autocomplete="off">
+       <!-- <i class="fal fa-search position-absolute fs-xl m-2 p-1 text-muted pos-left"></i>  -->
+      <input type="text" id="search-field" placeholder="Search for anything" class="form-control" tabindex="1">
+      <a href="#" onclick="return false;" class="btn-danger btn-search-close js-waves-off d-none" data-action="toggle" data-class="mobile-search-on">
+        <i class="fas fa-times"></i>
+      </a>
+    </form>
+  </div>
+
+  <div class="ml-auto d-flex">
+
+    <!-- activate app search icon (mobile) -->
+    <div class="hidden-sm-up">
+      <a href="#" class="header-icon" data-action="toggle" data-class="mobile-search-on" data-focus="search-field" title="Search">
+        <i class="fas fa-search"></i>
+      </a>
+    </div>
+    <app-dropdown-user></app-dropdown-user>
+  </div>
+
+</header>

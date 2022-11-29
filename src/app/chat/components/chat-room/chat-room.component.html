@@ -1,0 +1,14 @@
+<div class="container-fluid padding-0">
+  <app-chat-header></app-chat-header>
+  <div class="chat-body"  (scroll)="scrollTrigger()" #scrollChat>
+    <div class="no_chats" *ngIf="chats.length == 0">
+      <img src="../../../assets/images/bubble.png">
+      <h3>No open chats !</h3>
+    </div>
+    <div *ngFor="let chat of chats" class="message">
+      <app-message [displayMessage]="chat"></app-message>
+    </div>
+  </div>
+
+  <app-chat-input *ngIf="chats.length != 0"></app-chat-input>
+</div>

@@ -1,0 +1,59 @@
+.input-group{
+  bottom: 0;
+  width:100%;
+  color: #F4F1F8;
+  text-align: center;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.fa-circle{
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0px 1px 5px 3px #ddd8d5;
+}
+
+.fa-paper-plane{
+  color: white;
+  font-size: 20px;
+}
+
+.fa-stack{
+  height:30px;
+  width:40px;
+  margin-right: 10px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.fa-paperclip, .fa-grin, .fa-chevron-up{
+  cursor: pointer;
+  color: rgb(28, 19, 114);
+  font-size: 23px;
+}
+
+.input-group-btn{
+  padding-left: 10px;
+  margin-right: 5px;
+}
+
+.image-upload > input{
+    display: none;
+}
+
+.btn-primary{
+  margin-right: 5px;
+}
+
+.fa-circle-notch{
+  color: rgb(33, 209, 33);
+  font-size: 20px;
+}
+
+.fa-chevron-up{
+  text-align: center;
+}
+
+.btn-primary{
+  background: linear-gradient(45deg, #060d70, #2c0550);
+}

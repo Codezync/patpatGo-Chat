@@ -1,0 +1,57 @@
+.container-fluid{
+  background-color: white;
+
+ border-radius: 7px;
+ overflow: hidden;
+ position: relative;
+}
+
+.padding-0{
+  padding-right:0;
+  padding-left:0;
+}
+
+.chat-body{
+  height:300px;
+  padding:20px;
+  border-top-style: solid;
+  border-top-color: rgb(202, 202, 209);
+  border-top-width: 2px;
+  overflow-y: scroll !important;
+  margin-bottom: 20px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(233, 233, 240);
+  border-bottom-width: 1px;
+}
+
+.chat-body::-webkit-scrollbar {
+  display: none;
+}
+
+.no_chats {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+}
+
+.no_chats img{
+  height: 150px;
+  width: 150px;
+  margin-top: 100px;
+
+}
+
+@media screen and (min-width: 1400px) {
+  .chat-body{
+    height: 600px;
+  }
+}
+
+.chats{
+  overflow-y: scroll;
+}
+
+.chats::-webkit-scrollbar {
+  display: none;
+}

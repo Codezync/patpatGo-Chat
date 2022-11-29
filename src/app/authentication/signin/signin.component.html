@@ -1,0 +1,70 @@
+<div class="page-wrapper auth">
+  <div class="page-inner bg-brand-gradient">
+    <div class="page-content-wrapper bg-transparent m-0">
+      <div class="height-10 w-100 shadow-lg px-4 bg-brand-gradient">
+        <div class="d-flex align-items-center container p-0">
+          <div class="page-logo width-mobile-auto m-0 align-items-center justify-content-center p-0 bg-transparent bg-img-none shadow-0 height-9 border-0">
+            <a href="javascript:void(0)" class="page-logo-link press-scale-down d-flex align-items-center">
+              <img src="assets/images/logo.png" alt="SmartAdmin WebApp" aria-roledescription="logo" style="height: 50px; margin-top: 10px; margin-bottom: 10px;">
+              <span class="page-logo-text mr-1">patpatGO - Online Support</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="flex-1" style="background: url(assets/images/pattern-1.svg) no-repeat center bottom fixed; background-size: cover;">
+        <div class="container py-4 py-lg-5 my-lg-5 px-4 px-sm-0">
+          <div class="row">
+            <div class="col col-md-6 col-lg-6 hidden-sm-down">
+              <img class="login-page-typing" src = "../../../assets/images/girl.gif">
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-5 col-xl-6 ml-auto">
+                <h1 class="text-white fw-300 mb-3 d-sm-block d-md-none">
+                    Secure login
+                </h1>
+                <div class="card p-4 rounded-plus bg-faded">
+                    <form [formGroup]="loginUserForm">
+                        <div class="form-group">
+                            <label class="form-label" for="username">Username</label>
+                            <input type="email" id="username" class="form-control form-control-lg" formControlName="Username" placeholder="Username"  required >
+                            <span *ngIf="!Username.valid && (Username.touched || userSubmitted)"
+                              class="error-block">
+                              Please provide Username
+                            </span>
+
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="password">Password</label>
+                            <input type="password" id="password" class="form-control form-control-lg" formControlName="Password" placeholder="Password" required>
+                            <span *ngIf="!Password.valid && (Password.touched || userSubmitted)"
+                              class="error-block">
+                              Please provide password
+                            </span>
+                            <br>
+                        </div>
+                        <div class="form-group text-left">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="rememberme">
+                                <label class="custom-control-label" for="rememberme"> &nbsp; &nbsp; Remember me for the next 30 days</label>
+                            </div>
+                        </div>
+                        <div class="row no-gutters">
+                            <div class="col-lg-6 pl-lg-1 my-2">
+                                <button id="js-login-btn" type="submit" class="btn btn-info btn-block btn-lg" (click)="login()">Secure login</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+          </div>
+          <!-- <div class="position-absolute pos-bottom pos-left pos-right p-3 text-center text-white">
+              2022 © patpatGO - Online Support
+          </div> -->
+      </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+

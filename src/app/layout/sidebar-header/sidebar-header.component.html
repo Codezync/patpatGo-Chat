@@ -1,0 +1,25 @@
+<div class="sidebar-header">
+  <div>
+    <small class="chat-type">{{chatAppName}}</small>
+  </div>
+  <div class="page-logo">
+      <span class="fa-stack fa-1x" (click)="changeToggle()">
+        <i class="fas fa-square fa-stack-2x"></i>
+        <i class="fas fa-bars fa-stack-1x fa-inverse"></i>
+      </span>
+
+      <div class="action_menu" *ngIf="toggle">
+        <ul>
+          <li (click)="changeSidebarContent('open')"><i class="fas fa-envelope"></i>Inbox {{inboxType}}</li>
+          <li (click)="changeSidebarContent('close')"><i class="fas fa-window-close"></i>Closed Chats</li>
+        </ul>
+      </div>
+    <span class="page-logo-text mr-1">{{title}}</span>
+    <span>
+      <button class="btn btn-danger" *ngIf="inboxType == 'open' && isDisabled == false" (click)="showAlert()">Close Chat(s)</button>
+      <button class="btn btn-primary"  *ngIf="inboxType == 'open' && isDisabled == true" (click)="selectChats()">Select Chat(s)</button>
+    </span>
+  </div>
+  </div>
+
+

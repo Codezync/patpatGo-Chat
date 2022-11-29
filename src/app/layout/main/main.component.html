@@ -1,0 +1,17 @@
+<div class="page-wrapper">
+  <div class="page-inner">
+    <app-sidebar class="d-flex flex-column flex-fill "></app-sidebar>
+    <div class="page-content-wrapper">
+      <app-page-header></app-page-header>
+
+      <main id="js-page-content" role="main" class="page-content">
+        <app-chat-room></app-chat-room>
+        <router-outlet></router-outlet>
+      </main>
+
+      <app-page-footer class="d-flex w-100 order-4 "></app-page-footer>
+    </div>
+    <!-- this overlay is activated only when mobile menu is triggered -->
+    <div class="page-content-overlay"  data-class="mobile-nav-on"></div>
+  </div>
+</div>

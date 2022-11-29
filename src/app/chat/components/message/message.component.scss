@@ -1,0 +1,86 @@
+.chat_image{
+  max-height:300px;
+  max-width:300px;
+  cursor: pointer;;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top:40px;
+  margin-bottom:40px;
+  margin-left:60px;
+  margin-right:60px;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgb(158, 155, 155);
+}
+
+.separator:not(:empty)::before {
+  margin-right: 1em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: 1em;
+}
+
+.agent_name{
+  color: rgb(158, 60, 121);
+}
+
+.chat-segment{
+  margin-bottom: 15px;
+}
+
+.modal-dialog{
+  background-color: black;
+}
+
+.image-view{
+  max-width:fit-content;
+  max-height: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.chat_video{
+  max-height:300px;
+  max-width:300px;
+  cursor: pointer;;
+}
+
+
+.dropdown{
+  margin-top: 10px;
+
+}
+
+.option-btn{
+  background-color: transparent;
+  text-align: right;
+  border: transparent;
+}
+
+.fa-trash-alt{
+  float: right;
+}
+
+.delete-msg{
+  color: rgb(194, 192, 192);
+}
+
+.fa-trash-alt{
+  color: red;
+}
+
+.chat-segment-sent .chat-message{
+  background: linear-gradient(45deg, #02091e, #100550);
+}

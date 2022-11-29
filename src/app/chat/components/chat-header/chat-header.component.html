@@ -1,0 +1,46 @@
+<div class="card-header msg_head" *ngIf="customerDocId != ''">
+  <div class="d-flex bd-highlight">
+    <div class="img_cont" *ngIf="customerDetails?.customer.imageUrl != '' && customerDetails?.customer.imageUrl != null">
+      <img src={{customerDetails.customer.imageUrl}} class="rounded-circle user_img">
+      <span [ngClass]="(customerDetails?.customerOnline == true)? 'online_icon': 'offline_icon'"></span>
+    </div>
+
+    <div class="img_cont" *ngIf="customerDetails?.customer.imageUrl == '' || customerDetails?.customer.imageUrl == null">
+      <div class="profile-img-letter">
+        {{customerDetails?.customer.name.charAt(0)}}
+      </div>
+      <span [ngClass]="(customerDetails?.customerOnline == true)? 'online_icon': 'offline_icon'"></span>
+    </div>
+
+    <div class="user_info">
+      <span>{{customerDetails?.customer.name}}</span>
+      <p *ngIf="(customerDetails?.customerOnline) && !customerDetails?.customerTyping">Online</p>
+      <p *ngIf="!customerDetails?.customerOnline">Offline</p>
+      <p *ngIf="customerDetails?.customerTyping && customerDetails?.customerOnline">Typing...</p>
+    </div>
+  </div>
+
+    <span id="action_menu_btn">
+      <div ngbDropdown class="d-inline-block">
+        <span id="dropdownMenuButton" ngbDropdownToggle data-toggle="dropdown" >
+          &nbsp; &nbsp;<i class="fas fa-info-circle"></i>
+        </span>
+
+        <div class="action_menu" ngbDropdownMenu aria-labelledby="dropdownMenuButton">
+          <ul>
+            <li><i class="fas fa-user-circle"></i>{{customerDetails?.customer.name}}</li>
+            <li><i class="fas fa-envelope"></i>{{customerDetails?.customer.email}}</li>
+            <li><i class="fas fa-phone"></i>{{customerDetails?.customer.phoneNo}}</li>
+            <li><i class="fas fa-mobile-alt"></i>{{customerDetails?.customer.platform}}</li>
+            <li><i class="fas fa-mobile"></i>{{customerDetails?.customer.deviceName}}</li>
+            <li><i class="fas fa-mobile-alt"></i>{{customerDetails?.customer.appVersion}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- <button class="btn btn-danger" *ngIf="inboxType == 'open'" (click)="scheduleCloseChat()">Close Chat After 15 min</button> -->
+      <button class="btn btn-danger" *ngIf="inboxType == 'open'" (click)="showAlert()">Close Chat</button>
+    </span>
+
+
+</div>
